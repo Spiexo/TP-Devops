@@ -86,9 +86,13 @@ docker run -d -p 27017:27017 --name mongo mongo:7
 ### Jour 2 — CI/CD
 
 **4. Compléter le workflow GitHub Actions** (`.github/workflows/ci.yml`)
-- Déclenché sur push sur `main`
+- Déclenché sur push sur `main/master`
+- Run tests du backend
+- Run tests du frontend
+- Build frontend
 - Login Docker Hub via secrets
 - Build et push des deux images
+- Possibilité de bonus si vous faites d'autres étapes de vôtre choix
 
 ---
 
