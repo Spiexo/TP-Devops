@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       pull-requests: write
+      contents: write
     steps:
       - name: Merge automatique de la PR
         run: gh pr merge --merge --auto "$PR_URL"
