@@ -14,6 +14,7 @@
 #
 # Bonus : implémenter un multi-stage build pour réduire la taille de l'image
 # ─────────────────────────────────────────────────────────────────────────────
+
 FROM python:3.12-slim
 
 WORKDIR /app
