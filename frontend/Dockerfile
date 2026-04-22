@@ -17,7 +17,7 @@
 
 
 # Stage 1 "builder"
-FROM node:20-alpine
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -30,7 +30,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2 "runner"
-FROM nginx:alpine
+FROM nginx:alpine AS runner
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 
