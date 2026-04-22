@@ -28,7 +28,7 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 services:
-  db:
+  database:
     image: mongo:7
     container_name: database
     ports:
