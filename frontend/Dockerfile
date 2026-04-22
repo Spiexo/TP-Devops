@@ -14,3 +14,27 @@
 # Pourquoi multi-stage ? L'image finale ne doit pas contenir Node ni
 # node_modules — juste les fichiers statiques servis par Nginx.
 # ─────────────────────────────────────────────────────────────────────────────
+
+
+# Stage 1 "builder"
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json .
+
+RUN npm install
+
+COPY . .
+
+RUN npm run build
+
+# Stage 2 "runner"
+FROM nginx:alpine
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
+
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
