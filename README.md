@@ -1,3 +1,5 @@
+# Groupe de 3 : Kyrian Delaplace / Mathieu Bouffil / Erwann Varlet
+
 # devops-b3
 
 Projet support pour le cours DevOps — Bachelor B3.
